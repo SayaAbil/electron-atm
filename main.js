@@ -20,14 +20,7 @@ electron.app.once('ready', function () {
     // Don't show the window until it ready, this prevents any white flickering
     show: false,
     icon: path.join(__dirname, '/img/icon.png'),
-    title: 'Electron ATM',
-
-    webPreferences: {
-      nodeIntegration: true,     // Aktifkan Node.js di renderer
-      contextIsolation: false ,   // Nonaktifkan isolasi konteks
-      preload: path.join(__dirname, 'preload.js') 
-    }
-
+    title: 'Electron ATM'
   })
 
   // Open the DevTools.

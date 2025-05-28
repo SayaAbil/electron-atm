@@ -950,7 +950,7 @@ class ATM {
   }
 
   /**
-   * [processFDKButtonPressed description]
+   * [processFDKButtonPressed description]state not found
    * @param  {[type]} button [description]
    * @return {[type]}        [description]
    */

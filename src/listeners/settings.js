@@ -37,23 +37,19 @@ $(function(){
   $('#profile-name').val(settings.get('profile'))
 
   // Image path
-  function setImagePath() {
-    dialog.showOpenDialog({
-      properties: ['openDirectory']
-    }).then(result => {
-      if (!result.canceled && result.filePaths.length > 0) {
-        const selectedPath = result.filePaths[0];
-        console.log('Selected image path:', selectedPath); 
-        $('#images-path').val(selectedPath);
-        settings.set('image_path', selectedPath);
-      }
-    }).catch(err => {
-      console.error("Error selecting image path:", err);
+  function setImagePath(){
+    var selected_image_path = dialog.showOpenDialog({
+        properties: ['openDirectory']
     });
+
+    if(selected_image_path){
+      $('#images-path').val(selected_image_path[0]);
+      $('#images-path').val(selected_image_path);
+      settings.set('image_path', selected_image_path);
+    }
   }
 
   image_path = settings.get('image_path');
-  console.log('Loaded image path from settings:', image_path);
   $('#images-path').val(image_path);
 
   $('#open-file-manager').on('click', function(e){

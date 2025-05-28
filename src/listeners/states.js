@@ -96,7 +96,7 @@ $(function(){
     if(screen && screen.actions){      
       screen.actions.forEach((element) => {
         if(element.display_image)
-          $('#states-screen').attr('src', settings.get('image_path')[0] + element.display_image);
+        $('#states-screen').attr('src', settings.get('image_path')[0] + element.display_image);
       });
     }
   }

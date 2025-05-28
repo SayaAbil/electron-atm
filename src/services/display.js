@@ -16,8 +16,8 @@ class DisplayService {
 
   setScreen(screen){
     this.current_screen = screen;
-
-    //log.info(this.trace.object(screen));
+    console.log(this.current_screen,'DisplayService.setScreen()');
+    log.info(this.trace.object(screen)); 
     this.current_screen.actions.forEach((element) => {
       if(element === 'clear_screen'){
         this.text.init();        

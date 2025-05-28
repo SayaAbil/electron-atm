@@ -9,6 +9,8 @@ $(function () {
   const mousetrap = nodeRequire('mousetrap');
   const path = nodeRequire('path')
 
+  console.log(image_path)
+  
   image_path = settings.get('image_path');
   if(image_path)
     image_path = image_path[0];
@@ -159,7 +161,7 @@ $(function () {
   setInterval(function() {
     let current_state = atm.getCurrentState();
     if(current_state && displayed_state !== current_state && current_state.get('number')){
-      //console.log(current_state);
+      console.log(current_state);
       $('#current-state').val(current_state.get('number').toString() + ' ' + current_state.get('type'));
       ipc.send('ui-update-state', current_state);
       displayed_state = current_state;
